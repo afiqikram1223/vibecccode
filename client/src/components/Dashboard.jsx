@@ -11,7 +11,8 @@ export default function Dashboard() {
 
   const fetchDecks = async () => {
     try {
-      const response = await fetch('/api/decks');
+      const baseUrl = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${baseUrl}/api/decks`);
       const data = await response.json();
       if (response.ok && data.decks) {
         setPastDecks(data.decks);
@@ -30,7 +31,8 @@ export default function Dashboard() {
     setError('');
     
     try {
-      const response = await fetch('/api/generate-flashcards', {
+      const baseUrl = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${baseUrl}/api/generate-flashcards`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
