@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bento-card {
+    @apply bg-white border border-surface-container-highest rounded p-6 shadow-soft;
+  }
+  
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-[20px] border border-white/20 rounded p-6 shadow-soft;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-on-primary font-geist font-medium px-6 py-2 rounded transition-transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply border border-primary text-primary font-geist font-medium px-6 py-2 rounded transition-transform hover:scale-105 active:scale-95;
+  }
+  
+  .input-field {
+    @apply w-full bg-transparent border-b border-surface-container-highest focus:border focus:border-primary rounded-none focus:rounded outline-none transition-all px-4 py-2 font-geist text-on-surface;
+  }
+  
+  .ai-glow {
+    box-shadow: 0 0 8px 0px rgba(178, 43, 29, 0.4);
+  }
+}
+
+/* Perspective for 3D flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Study Buddy - Testing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Newsreader:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e3e2df",
+                      "on-primary-container": "#ff8371",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#5f5e5e",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-container": "#cba72f",
+                      "surface-variant": "#e3e2df",
+                      "background": "#faf9f5",
+                      "surface-bright": "#faf9f5",
+                      "on-primary-fixed-variant": "#8f0f07",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#e2bfb9",
+                      "surface": "#faf9f5",
+                      "on-background": "#1b1c1a",
+                      "inverse-primary": "#ffb4a8",
+                      "on-secondary-fixed-variant": "#474746",
+                      "surface-container-high": "#e9e8e4",
+                      "error-container": "#ffdad6",
+                      "primary-container": "#800000",
+                      "secondary-container": "#e2dfde",
+                      "on-primary-fixed": "#410000",
+                      "on-surface": "#1b1c1a",
+                      "tertiary": "#735c00",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#ffe088",
+                      "inverse-surface": "#2f312e",
+                      "inverse-on-surface": "#f2f1ed",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "surface-tint": "#b22b1d",
+                      "on-surface-variant": "#5a413d",
+                      "primary": "#570000",
+                      "on-secondary-container": "#636262",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "outline": "#8e706c",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-container-low": "#f4f4f0",
+                      "surface-container": "#efeeea",
+                      "surface-dim": "#dbdad6",
+                      "primary-fixed": "#ffdad4",
+                      "on-tertiary-fixed-variant": "#574500"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "gutter": "16px",
+                      "margin-desktop": "48px",
+                      "bento-gap": "12px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-sm": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "title-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Newsreader"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .bento-card {
+            border: 1px solid #E5E2D9;
+        }
+        
+        /* Perspective for 3D flip */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        
+        /* Example state for flipped card (used via group hover for demo) */
+        .group:hover .flip-container {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-lg">
+<!-- Top Navigation (Web Only) -->
+<nav class="hidden md:flex bg-background/80 dark:bg-background/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant dark:border-outline-variant/30 justify-between items-center w-full px-margin-desktop h-16 transition-transform duration-200">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim">Study Buddy</span>
+</div>
+<div class="flex items-center gap-8">
+<a class="text-secondary font-medium hover:opacity-80 transition-opacity" href="#">Dashboard</a>
+<a class="text-secondary font-medium hover:opacity-80 transition-opacity" href="#">Input</a>
+<a class="text-primary font-bold scale-95 transition-transform duration-200" href="#">Testing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Student Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAriPLzwe1v7aGxxUwU7ZOw8wpj7yzsjlnSKgFiYDemuNcVKDFjQxbQzN3wP_Jlh8wwbqmaEUspASRkLd39tf5aIn3LTlyTp2M7olltrjsezbQ6RMD_jXvAJsqq7VFrhk1xhayhOzCPdeubSCiEBAJOjs8i26-vQuIOOPoqZTPmAAUoO6YJb77M76ApfWpLzvuoOV5iGYj6KzqNsb3czs_DGn0ktukEMEa2cZhEvqdF4crKs6Szw5_KnSlhf-QmT5gTXO5T8a2eZYE"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col p-margin-mobile md:p-margin-desktop gap-bento-gap pb-32 md:pb-margin-desktop max-w-4xl mx-auto w-full">
+<!-- Header & Progress -->
+<header class="flex flex-col gap-4 mb-8">
+<div class="flex justify-between items-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Advanced Biology 101</h1>
+<span class="font-label-caps text-label-caps text-secondary bg-surface-variant/50 px-3 py-1 rounded-full border border-[#E5E2D9]">12 / 45 Cards</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-[#E5E2D9] rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[26%] rounded-full transition-all duration-500"></div>
+</div>
+</header>
+<!-- Flashcard Area -->
+<section class="flex-grow flex items-center justify-center perspective-1000 group cursor-pointer w-full min-h-[400px]">
+<!-- Flip Container -->
+<div class="flip-container relative w-full max-w-2xl h-[400px] md:h-[500px] transition-transform duration-700 transform-style-3d">
+<!-- Front Side (Question) -->
+<div class="absolute inset-0 w-full h-full backface-hidden bento-card bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-center items-center shadow-[0px_10px_30px_rgba(28,28,28,0.02)]">
+<div class="absolute top-6 left-6 font-label-caps text-label-caps text-secondary">Question</div>
+<div class="absolute top-6 right-6">
+<span class="material-symbols-outlined text-outline">flip</span>
+</div>
+<p class="font-title-md text-title-md md:font-headline-lg-mobile md:text-headline-lg-mobile text-center text-on-surface max-w-lg leading-relaxed">
+                        What is the primary function of the mitochondria in a eukaryotic cell?
+                    </p>
+<div class="absolute bottom-6 font-body-sm text-body-sm text-secondary-container animate-pulse">Tap to reveal answer</div>
+</div>
+<!-- Back Side (Answer) -->
+<div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bento-card bg-surface-container-low rounded-xl p-8 flex flex-col justify-center items-center border-t-4 border-t-primary shadow-[0px_10px_30px_rgba(28,28,28,0.05)]">
+<div class="absolute top-6 left-6 font-label-caps text-label-caps text-primary">Answer</div>
+<p class="font-body-lg text-body-lg text-center text-on-surface-variant max-w-lg mb-6">
+                        The primary function of the mitochondria is to generate most of the chemical energy needed to power the cell's biochemical reactions, stored in the form of <strong class="text-primary font-medium">adenosine triphosphate (ATP)</strong>. Often referred to as the "powerhouse of the cell."
+                    </p>
+<!-- Performance Context (Bento Micro-module) -->
+<div class="mt-6 flex gap-4 text-secondary font-label-caps text-label-caps opacity-70">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">history</span> Last reviewed 2 days ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">trending_up</span> Mastery 65%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Controls -->
+<section class="mt-8 flex justify-center gap-4 w-full max-w-2xl mx-auto">
+<button class="flex-1 max-w-[200px] py-4 px-6 rounded-xl border border-primary text-primary font-title-md text-title-md bg-transparent hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">close</span> Incorrect
+            </button>
+<button class="flex-1 max-w-[200px] py-4 px-6 rounded-xl bg-primary text-on-primary font-title-md text-title-md hover:bg-primary/90 transition-colors shadow-[0_0_15px_rgba(87,0,0,0.2)] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check</span> Correct
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-background/80 dark:bg-background/80 backdrop-blur-xl rounded-t-xl border-t border-outline-variant dark:border-outline-variant/30 shadow-sm">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">edit_note</span>
+<span class="font-label-caps text-label-caps">Input</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-fixed/20 rounded-full px-4 py-1 scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-caps text-label-caps">Testing</span>
+</a>
+</nav>
+</body></html>
